@@ -1,0 +1,234 @@
+/* Basic Reset and Font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Body Layout */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: hwb(296 86% 2%);
+  flex-direction: column;
+  position: relative;
+}
+
+/* Wrapper Styling */
+.wrapper {
+  padding: 35px 40px;
+  border-radius: 20px;
+  background: #ff8fe9;
+  width: 80%;
+  max-width: 800px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 8 Animated Neon Buttons inside the Piano */
+.top-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+  width: 100%;
+  padding: 3px 0;
+  position: absolute;
+  top: 20px;
+}
+
+.top-button {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  background: #00ffcc;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: pulsate 1.5s infinite alternate;
+  margin: 0 7px;
+}
+
+.top-button:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.top-button:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.top-button:nth-child(4) {
+  animation-delay: 0.9s;
+}
+.top-button:nth-child(5) {
+  animation-delay: 1.2s;
+}
+.top-button:nth-child(6) {
+  animation-delay: 1.5s;
+}
+.top-button:nth-child(7) {
+  animation-delay: 1.8s;
+}
+.top-button:nth-child(8) {
+  animation-delay: 2.1s;
+}
+
+@keyframes pulsate {
+  0% {
+    background: #00ffcc;
+  }
+  100% {
+    background: #6a39b8;
+  }
+}
+
+/* Piano Keys Styling */
+.piano-keys {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  margin-top: 30px;
+  position: relative;
+  padding-top: 50px;
+}
+
+.piano-keys .key {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.piano-keys .black {
+  z-index: 2;
+  width: 44px;
+  height: 140px;
+  margin: 0 -22px;
+  border-radius: 0 0 5px 5px;
+  background: linear-gradient(#7887ff, #0fbec7);
+}
+
+.piano-keys .black.active {
+  box-shadow: inset -5px -10px 10px rgba(255, 255, 255, 0.1);
+  background: linear-gradient(to bottom, #5ca2ff, #00ddff);
+}
+
+.piano-keys .white {
+  height: 230px;
+  width: 70px;
+  border-radius: 8px;
+  border: 1px solid #196ff2;
+  background: linear-gradient(#fff 96%, #eee 4%);
+}
+
+.piano-keys .white.active {
+  box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to bottom, #ffc9f4 0%, #fb9ce8 100%);
+}
+
+/* Footer Styling */
+footer {
+  text-align: center;
+  color: #000;
+  padding: 10px 0;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+}
+
+footer p {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Mobile-specific adjustments (Proportional resizing for smaller screens) */
+@media (max-width: 768px) {
+  .wrapper {
+    width: 460px;
+    transform: scale(0.6);
+    transform-origin: top center;
+    padding: 20px;
+    max-width: none;
+  }
+
+  .top-buttons {
+    width: 100%;
+  }
+
+  .top-button {
+    width: 28px;
+    height: 28px;
+  }
+
+  .piano-keys .white {
+    width: 62px;
+    height: 185px;
+  }
+
+  .piano-keys .black {
+    width: 42px;
+    height: 120px;
+  }
+
+  footer p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    width: 460px;
+    padding: 15px 20px;
+  }
+
+  .top-button {
+    width: 22px;
+    height: 22px;
+  }
+
+  .top-buttons {
+    margin-top: 10px;
+  }
+
+  .piano-keys .white {
+    width: 50px;
+    height: 170px;
+  }
+
+  .piano-keys .black {
+    width: 35px;
+    height: 110px;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .piano-keys {
+    margin-top: 20px;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #ff8fe9;
+  }
+}
