@@ -1,4 +1,4 @@
-/* Basic Reset and Font */
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +6,7 @@
   font-family: 'Arial', sans-serif;
 }
 
-/* Body Layout */
+
 body {
   display: flex;
   justify-content: center;
@@ -17,7 +17,7 @@ body {
   position: relative;
 }
 
-/* Wrapper Styling */
+
 .wrapper {
   padding: 35px 40px;
   border-radius: 20px;
@@ -31,7 +31,7 @@ body {
   align-items: center;
 }
 
-/* 8 Animated Neon Buttons inside the Piano */
+
 .top-buttons {
   display: flex;
   justify-content: center;
@@ -66,7 +66,7 @@ body {
   100% { background: #6a39b8; }
 }
 
-/* Piano Keys Styling */
+
 .piano-keys {
   display: flex;
   list-style: none;
@@ -110,7 +110,7 @@ body {
   background: linear-gradient(to bottom, #ffc9f4 0%, #fb9ce8 100%);
 }
 
-/* Footer Styling */
+
 footer {
   text-align: center;
   color: #000;
@@ -121,7 +121,7 @@ footer {
   width: 100%;
 }
 
-/* Mobile-specific adjustments (Proportional resizing for smaller screens) */
+
 @media (max-width: 768px) {
   .wrapper {
     width: 460px;
@@ -159,7 +159,7 @@ footer {
   }
 }
 
-/* Landscape Mode Adjustments (Mobile Landscape) */
+
 @media (orientation: landscape) and (max-width: 768px) {
   .wrapper {
     width: 90%;
